@@ -156,15 +156,16 @@ section .sectionContainer{
 .sectionAuthor p{
     font-family: "Inter", sans-serif;
     color: white;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 200;
     text-align: right;
+    margin-top: 10px;
 }
 
 .sectionAuthor span{
     font-family: "Inter", sans-serif;
     color: #E34646;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 200;
 }
 
@@ -201,37 +202,48 @@ section .sectionContainer{
         max-width: 80%;
         margin-top: -30%;
     }
+
     .sectionHistory p, .sectionHistory span{
         font-size: 23px;
         text-align: center;
     }
+
     .sectionBox{
         flex-direction: column-reverse;
     }
+
     .sectionBox .sectionText{
         font-size: 14px;
         padding-right: 0%;
     }
+
     .sectionAuthor{
         display: flex;
         align-items: center;
     }
+
     .sectionAuthor img{
         width: 116px;
         height: auto;
     }
+    
     .sectionAuthor p, .sectionAuthor span{
         font-size: 10px;
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    /* Main */
-    /* main .mainContainer{
-        margin-top: 100px;
-    } */
     /* Section */
     section .sectionContainer{
         max-width: 85%;
+    }
+
+    .sectionAuthor img{
+        width: 174px;
+        height: auto;
+    }
+    
+    .sectionAuthor p, .sectionAuthor span{
+        font-size: 14px;
     }
 }
