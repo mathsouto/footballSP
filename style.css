@@ -66,11 +66,14 @@ header .headerContainer{
     color: white;
     font-size: 32px;
     font-family: "JetBrains Mono", monospace;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+
 }
 
 .menu span {
     color: #E34646;
     font-size: 32px;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
 }
 
 /* Main */
@@ -88,6 +91,7 @@ main .mainContainer{
     color: white;
     font-family: "JetBrains Mono", monospace;
     font-weight: 300;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 1);
 }
 
 .mainAnimation{
