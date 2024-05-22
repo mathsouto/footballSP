@@ -75,14 +75,13 @@ header .headerContainer{
 
 /* Main */
 main .mainContainer{
-    max-width: 60%;
-    margin: 0 auto;
-    margin-top: 200px;
-    margin-bottom: 510px;
-    height: 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 60%;
+    margin: 0 auto;
+    margin-top: 200px;
+    height: 150px;
 }
 
 .mainContainer h1{
@@ -92,8 +91,6 @@ main .mainContainer{
 }
 
 .mainAnimation{
-    width: 200px;
-    height: 350px;
     background-color: white;
     justify-content: center;
     align-items: center;
@@ -171,13 +168,12 @@ section .sectionContainer{
     font-weight: 200;
 }
 
-
-
-
-
-
 /* Medias querry */
 @media only screen and (max-width: 768px) {
+    /* Header */
+    header .headerContainer{
+        height: 100px;
+    }
     /* Menu */
     .menu a, .menu span {
         font-size: 26px;
@@ -188,28 +184,32 @@ section .sectionContainer{
     }
     /* Main */
     main .mainContainer{
-        display: flex;
         flex-direction: column;
+        margin-top: 210px;
+        margin-bottom: 597px;
     }
     .mainContainer h1{
-        margin-top: -90px;
-        margin-bottom: 80px;
         font-size: 23px;
+    }
+
+    .mainAnimation {
+        margin-top: 150px;
     }
 
     /* Section */
     section .sectionContainer{
+        max-width: 80%;
         margin-top: -30%;
     }
     .sectionHistory p, .sectionHistory span{
-        font-size: 20px;
+        font-size: 23px;
         text-align: center;
     }
     .sectionBox{
         flex-direction: column-reverse;
     }
     .sectionBox .sectionText{
-        font-size: 11px;
+        font-size: 14px;
         padding-right: 0%;
     }
     .sectionAuthor{
@@ -222,5 +222,16 @@ section .sectionContainer{
     }
     .sectionAuthor p, .sectionAuthor span{
         font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    /* Main */
+    /* main .mainContainer{
+        margin-top: 100px;
+    } */
+    /* Section */
+    section .sectionContainer{
+        max-width: 85%;
     }
 }
