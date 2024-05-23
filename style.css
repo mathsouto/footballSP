@@ -110,12 +110,12 @@ body {
     color: white;
     font-size: 32px;
     font-family: "JetBrains Mono", monospace;
+    transition: ease-in-out 0.3s all;
 }
 
 .menu span {
-    color: transparent;
-    background-image: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(227,70,64,1) 0%, rgba(227,70,64,1) 58%, rgba(255,255,255,1) 85%);
-    background-clip: text;
+    color: #E34646;
+    font-size: 32px;
 }
 
 /* Main */
@@ -221,6 +221,10 @@ section .sectionContainer{
     .headerNav ul li a:hover {
         color: #E34646;
         -webkit-tap-highlight-color: transparent;
+    }
+    .menu a:hover{
+        scale: 1.1;
+        cursor: pointer;
     }
 }
 
