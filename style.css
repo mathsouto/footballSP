@@ -12,6 +12,12 @@
 body {
     background-color: #3a3a3a;
     margin: 0 auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Safari e Chrome */
 }
 
 /* Line */
@@ -40,55 +46,80 @@ body {
 }
 
 /* Header */
-.headerNav {
-    position: absolute;
-    top: -230px; /* Escondido por padrão */
-    right: 0;
-    background-color: #3a3a3a;
-    opacity: 0.9; /* Alterado para 0.9 para manter consistência */
-    width: 100%;
-    height: 230px;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: top 0.3s ease-in-out; /* Animação para o deslizamento */
-}
-
-.headerNav.show {
-    top: 0; /* Mostra o menu */
-}
-
-.headerNav ul {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin-top: 90px;
-}
-
-.headerNav ul li {
-    list-style: none;
-    margin: 0 35px;
-}
-
-.headerNav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-family: "JetBrains Mono", monospace;
-    font-weight: 200;
-    transition: color 0.3s ease-in-out;
-    -webkit-tap-highlight-color: transparent;
-}
-
 .headerContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 140px;
-    z-index: 3;
+}
+
+.headerNav {
+    position: fixed;
+    top: 0;
+    right: -15%; /* Inicialmente fora da tela à direita */
+    background-color: #C0C0C0;
+    height: 100vh;
+    width: 15%;
+    transition: right 0.3s ease; /* Transição suave */
+    z-index: 1001;
+}
+
+.headerNav.show {
+    right: 0; /* Posiciona o menu visível */
+}
+
+.headerNavTop {
+    position: relative; /* Cria um contexto de empilhamento */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 97px; /* Ajusta conforme necessário */
+    width: 100%; /* Ajusta conforme necessário */
+}
+
+.headerNavBG {
+    background-color: #D9D9D9;
+    width: 100%; /* Ajusta para preencher o container */
+    height: 100%; /* Ajusta para preencher o container */
+    position: absolute; /* Para que fique atrás do conteúdo */
+    z-index: 1; /* Certifica-se de que o fundo está abaixo da imagem */
+}
+
+.headerNavTop img {
+    position: relative; /* Mantém relativo para contexto de empilhamento */
+    z-index: 2; /* Certifica-se de que a imagem está acima do fundo */
+    animation: rotate 3s linear infinite; /* Aplica a animação de rotação */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.headerNav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.headerNav ul li {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.headerNav ul li a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
 }
 
 .menu {
@@ -97,7 +128,6 @@ body {
     align-items: center;
     width: 100%;
     margin: 0 7%;
-    z-index: 2;
 }
 
 .menu img {
@@ -116,6 +146,25 @@ body {
 .menu span {
     color: #E34646;
     font-size: 32px;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo com opacidade */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 1000; /* Abaixo do headerNav */
+    transition: all 0.3s ease-in-out;
+}
+
+#overlay.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Main */
@@ -228,28 +277,34 @@ section .sectionContainer{
     }
 }
 
+@media only screen and (max-width: 1024px), only screen and (max-width: 1180px) {
+    .headerNav{
+        width: 40%;
+        right: -40%;
+    }
+    /* Section */
+    section .sectionContainer{
+        max-width: 85%;
+    }
+
+    .sectionAuthor img{
+        width: 174px;
+        height: auto;
+    }
+    
+    .sectionAuthor p, .sectionAuthor span{
+        font-size: 14px;
+    }
+}
+
 @media only screen and (max-width: 768px) {
     /* Header */
-    .headerNav{
-        height: 190px;
+    .headerNav {
+        width: 50%;
+        right: -50%; /* Inicialmente fora da tela à direita */
     }
-
-    .headerNav ul {
-        /* flex-direction: column;
-        text-align: center; */
-        margin-top: 80px;
-    }
-
-    .headerNav ul li {
-        margin: 0 15px;
-    }
-
     .headerNav ul li a {
-        font-size: 12px;
-    }
-
-    .headerContainer{
-        height: 100px;
+        font-size: 17px;
     }
     /* Menu */
     .menu a, .menu span {
@@ -305,22 +360,5 @@ section .sectionContainer{
     
     .sectionAuthor p, .sectionAuthor span{
         font-size: 10px;
-    }
-}
-
-@media only screen and (max-width: 1024px) {
-    /* Header */
-    /* Section */
-    section .sectionContainer{
-        max-width: 85%;
-    }
-
-    .sectionAuthor img{
-        width: 174px;
-        height: auto;
-    }
-    
-    .sectionAuthor p, .sectionAuthor span{
-        font-size: 14px;
     }
 }
