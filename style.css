@@ -120,6 +120,7 @@ body::-webkit-scrollbar {
     transition: all 0.3s ease-in-out;
     font-family: "Inter", sans-serif;
     font-size: 20px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .menu {
