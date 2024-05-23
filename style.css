@@ -79,6 +79,7 @@ body {
     font-family: "JetBrains Mono", monospace;
     font-weight: 200;
     transition: color 0.3s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .headerContainer {
@@ -101,6 +102,7 @@ body {
 
 .menu img {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .menu a, .menu span {
@@ -218,6 +220,7 @@ section .sectionContainer{
 @media (hover:hover) and (pointer:fine) {
     .headerNav ul li a:hover {
         color: #E34646;
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
