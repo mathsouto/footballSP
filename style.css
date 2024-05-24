@@ -347,13 +347,14 @@ body::-webkit-scrollbar {
     /* Main */
     .sectionOne{
         flex-direction: column;
-        margin-top: 210px;
+        margin-top: 190px;
         margin-bottom: 597px;
     }
     
     .sectionOne h1{
-        font-size: 23px;
+        font-size: 20px;
         text-align: center;
+        margin-left: 5px;
     }
 
     .sectionOneAnimation {
@@ -391,5 +392,12 @@ body::-webkit-scrollbar {
     
     .sectionTwoAuthor p, .sectionTwoAuthor span{
         font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 345px) {
+    .sectionOne h1{
+        font-size: 19px;
+        margin-left: 5px;
     }
 }
