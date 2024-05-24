@@ -70,6 +70,7 @@ body::-webkit-scrollbar {
     font-family: "JetBrains Mono", monospace;
     transition: ease-in-out 0.3s all;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .headerMenu span {
@@ -87,7 +88,7 @@ body::-webkit-scrollbar {
     position: fixed;
     top: 0;
     right: -15%; /* Inicialmente fora da tela à direita */
-    background-color: #c0c0c0ef;
+    background-color: #202020ef;
     height: 100vh;
     width: 15%;
     transition: right 0.3s ease; /* Transição suave */
@@ -108,7 +109,7 @@ body::-webkit-scrollbar {
 }
 
 .headerNavBG {
-    background-color: #d9d9d9f5;
+    background-color: #2e2e2ef5;
     width: 100%; /* Ajusta para preencher o container */
     height: 100%; /* Ajusta para preencher o container */
     position: absolute; /* Para que fique atrás do conteúdo */
@@ -130,26 +131,45 @@ body::-webkit-scrollbar {
     }
 }
 
-.headerNav ul {
+.headerNavMenu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 100px 0;
+    justify-content: right;
+    margin: 50px 0;
+    margin-right: 10%;
 }
 
-.headerNav ul li {
+.headerNavMenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     list-style: none;
+}
+
+.headerNavMenu ul li {
     margin: 20px 0;
 }
 
-.headerNav ul li a {
-    color: black;
+.headerNavMenu ul li a {
+    color: #ccc;
     text-decoration: none;
-    transition: all 0.3s ease-in-out;
     font-family: "Inter", sans-serif;
-    font-size: 20px;
+    font-weight: 300;
+    font-size: 16px;
     -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+.headerNav ul li i {
+    margin-left: 15px;
+    font-size: 19px;
+    color: #ebebeb;
+}
+
+.lineMenu {
+    width: 100%;
+    height: 2px;
+    background-color: #5c5c5c7e;
+    margin: 50% 0;
 }
 
 #overlay {
@@ -292,13 +312,14 @@ body::-webkit-scrollbar {
 /* Medias querry */
 @media (hover:hover) and (pointer:fine) {
     /* Header */
-    .headerNav ul li a:hover {
-        color: #E34646;
-        -webkit-tap-highlight-color: transparent;
+    .headerNavMenu ul li a:hover {
+        color: #ebebeb;
     }
+
     .headerMenu a:hover {
         scale: 1.1;
     }
+
     .headerMenu img:hover {
         scale: 1.1;
     }
@@ -307,9 +328,18 @@ body::-webkit-scrollbar {
 @media only screen and (max-width: 1024px), only screen and (max-width: 1180px) {
     /* Header */
     .headerNav{
-        width: 40%;
-        right: -40%;
+        width: 25%;
+        right: -25%;
     }
+
+    .headerNavMenu ul li a{
+        font-size: 15px;
+    }
+
+    .headerNavMenu ul li i{
+        font-size: 18px;
+    }
+
     /* Main */
     .sectionTwo{
         max-width: 85%;
@@ -327,12 +357,20 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 768px) {
     /* Header */
+    .headerContainer {
+        height: 100px;
+    }
+
     .headerNav {
         width: 50%;
         right: -50%; /* Inicialmente fora da tela à direita */
     }
 
-    .headerNav ul li a {
+    .headerNavMenu ul li a {
+        font-size: 14px;
+    }
+
+    .headerNavMenu ul li i{
         font-size: 17px;
     }
 
@@ -364,7 +402,7 @@ body::-webkit-scrollbar {
 
     .sectionTwo{
         max-width: 80%;
-        margin-top: -30%;
+        margin-top: -25%;
     }
 
     .sectionTwoTitle p, .sectionTwoTitle span{
@@ -397,6 +435,15 @@ body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 345px) {
+    /* Header */
+    .headerNavMenu ul li a{
+        font-size: 13px;
+    }
+
+    .headerNavMenu ul li i{
+        font-size: 16px;
+    }
+
     .sectionOne h1{
         font-size: 19px;
         margin-left: 5px;
