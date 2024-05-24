@@ -186,6 +186,7 @@ body::-webkit-scrollbar {
     color: white;
     font-family: "JetBrains Mono", monospace;
     font-weight: 300;
+    text-shadow: 4px 1px 17px rgba(0, 0, 0, 0.68);
 }
 
 .sectionOneH1 {
