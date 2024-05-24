@@ -191,11 +191,13 @@ body::-webkit-scrollbar {
 .sectionOneH1 {
     color: #E34646;
     font-family: "JetBrains Mono", monospace;
+    margin-left: 5px;
 }
 
 .sectionOneH1::after {
     content: "|";
     opacity: 1;
+    margin-left: 2px;
     animation: pisca .7s infinite;
 }
 
