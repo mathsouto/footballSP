@@ -12,12 +12,12 @@
 body {
     background-color: #3a3a3a;
     margin: 0 auto;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 body::-webkit-scrollbar {
-    display: none; /* Safari e Chrome */
+    display: none;
 }
 
 /* Line */
@@ -54,11 +54,40 @@ body::-webkit-scrollbar {
     height: 140px;
 }
 
+.headerMenu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 7%;
+}
+
+
+.headerMenu a, .headerMenu span {
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    font-family: "JetBrains Mono", monospace;
+    transition: ease-in-out 0.3s all;
+    cursor: pointer;
+}
+
+.headerMenu span {
+    color: #E34646;
+    font-size: 32px;
+}
+
+.headerMenu img {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: ease-in-out 0.3s all;
+}
+
 .headerNav {
     position: fixed;
     top: 0;
     right: -15%; /* Inicialmente fora da tela à direita */
-    background-color: #C0C0C0;
+    background-color: #c0c0c0ef;
     height: 100vh;
     width: 15%;
     transition: right 0.3s ease; /* Transição suave */
@@ -66,7 +95,7 @@ body::-webkit-scrollbar {
 }
 
 .headerNav.show {
-    right: 0; /* Posiciona o menu visível */
+    right: 0; /* Posiciona o.headerMenu visível */
 }
 
 .headerNavTop {
@@ -79,7 +108,7 @@ body::-webkit-scrollbar {
 }
 
 .headerNavBG {
-    background-color: #D9D9D9;
+    background-color: #d9d9d9f5;
     width: 100%; /* Ajusta para preencher o container */
     height: 100%; /* Ajusta para preencher o container */
     position: absolute; /* Para que fique atrás do conteúdo */
@@ -123,32 +152,6 @@ body::-webkit-scrollbar {
     -webkit-tap-highlight-color: transparent;
 }
 
-.menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0 7%;
-}
-
-.menu img {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.menu a, .menu span {
-    text-decoration: none;
-    color: white;
-    font-size: 32px;
-    font-family: "JetBrains Mono", monospace;
-    transition: ease-in-out 0.3s all;
-}
-
-.menu span {
-    color: #E34646;
-    font-size: 32px;
-}
-
 #overlay {
     position: fixed;
     top: 0;
@@ -159,7 +162,7 @@ body::-webkit-scrollbar {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
-    z-index: 1000; /* Abaixo do headerNav */
+    z-index: 1000;
     transition: all 0.3s ease-in-out;
 }
 
@@ -169,7 +172,7 @@ body::-webkit-scrollbar {
 }
 
 /* Main */
-main .mainContainer{
+.sectionOne {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -179,41 +182,40 @@ main .mainContainer{
     height: 150px;
 }
 
-.mainContainer h1{
+.sectionOne h1{
     color: white;
     font-family: "JetBrains Mono", monospace;
     font-weight: 300;
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 1);
 }
 
-.mainAnimation{
+.sectionOneAnimation{
     background-color: white;
     justify-content: center;
     align-items: center;
     display: flex;
 }
 
-.mainBG {
+.sectionOneBG {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-image: url('./assets/imgs/mainBG.png');
+    background-image: url('./assets/imgs/sectionOneBG.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Section */
-section .sectionContainer{
+.sectionTwo{
     max-width: 60%;
     margin: 0 auto;
     margin-top: 30%;
 }
 
-.sectionHistory p{
+.sectionTwoTitle p{
     color: white;
     font-family: "IM Fell DW Pica SC", serif;
     font-size: 26px;
@@ -221,35 +223,35 @@ section .sectionContainer{
     margin-bottom: 22px;
 }
 
-.sectionHistory span{
+.sectionTwoTitle span{
     color: #E34646;
     font-family: "IM Fell DW Pica SC", serif;
     font-size: 26px;
     font-weight: lighter;
 }
 
-.sectionBox{
+.sectionTwoBox{
     display: flex;
 }
 
-.sectionBox .sectionText{
+.sectionTwoBox .sectionTwoText{
     text-align: justify;
     font-family: "Inter", sans-serif;
     font-size: 18px;
     padding-right: 10%;
 }
 
-.sectionAuthor{
+.sectionTwoAuthor{
     display: flex;
     flex-direction: column;
 }
 
-.sectionAuthor img{
+.sectionTwoAuthor img{
     width: 232px;
     height: auto;
 }
 
-.sectionAuthor p{
+.sectionTwoAuthor p{
     font-family: "Inter", sans-serif;
     color: white;
     font-size: 16px;
@@ -258,42 +260,49 @@ section .sectionContainer{
     margin-top: 10px;
 }
 
-.sectionAuthor span{
+.sectionTwoAuthor span{
     font-family: "Inter", sans-serif;
     color: #E34646;
     font-size: 16px;
     font-weight: 200;
 }
 
-/* Medias querry */
+.sectionThree {
+    
+}
 
+/* Medias querry */
 @media (hover:hover) and (pointer:fine) {
+    /* Header */
     .headerNav ul li a:hover {
         color: #E34646;
         -webkit-tap-highlight-color: transparent;
     }
-    .menu a:hover{
+    .headerMenu a:hover {
         scale: 1.1;
-        cursor: pointer;
+    }
+    .headerMenu img:hover {
+        scale: 1.1;
     }
 }
 
 @media only screen and (max-width: 1024px), only screen and (max-width: 1180px) {
+    /* Header */
     .headerNav{
         width: 40%;
         right: -40%;
     }
-    /* Section */
-    section .sectionContainer{
+    /* Main */
+    .sectionTwo{
         max-width: 85%;
     }
 
-    .sectionAuthor img{
+    .sectionTwoAuthor img{
         width: 174px;
         height: auto;
     }
     
-    .sectionAuthor p, .sectionAuthor span{
+    .sectionTwoAuthor p, .sectionTwoAuthor span{
         font-size: 14px;
     }
 }
@@ -304,62 +313,65 @@ section .sectionContainer{
         width: 50%;
         right: -50%; /* Inicialmente fora da tela à direita */
     }
+
     .headerNav ul li a {
         font-size: 17px;
     }
-    /* Menu */
-    .menu a, .menu span {
+
+    .headerMenu a, .headerMenu span {
         font-size: 26px;
     }
-    .menu img {
+
+    .headerMenu img {
         width: 34px;
         height: 24px;
     }
+
     /* Main */
-    main .mainContainer{
+    .sectionOne{
         flex-direction: column;
         margin-top: 210px;
         margin-bottom: 597px;
     }
-    .mainContainer h1{
+    
+    .sectionOne h1{
         font-size: 23px;
     }
 
-    .mainAnimation {
+    .sectionOneAnimation {
         margin-top: 150px;
     }
 
-    /* Section */
-    section .sectionContainer{
+    .sectionTwo{
         max-width: 80%;
         margin-top: -30%;
     }
 
-    .sectionHistory p, .sectionHistory span{
+    .sectionTwoTitle p, .sectionTwoTitle span{
         font-size: 23px;
         text-align: center;
     }
 
-    .sectionBox{
+    .sectionTwoBox{
         flex-direction: column-reverse;
     }
 
-    .sectionBox .sectionText{
+    .sectionTwoBox .sectionTwoText{
         font-size: 14px;
         padding-right: 0%;
     }
 
-    .sectionAuthor{
+    .sectionTwoAuthor{
         display: flex;
         align-items: center;
     }
 
-    .sectionAuthor img{
+    .sectionTwoAuthor img{
         width: 116px;
         height: auto;
     }
     
-    .sectionAuthor p, .sectionAuthor span{
+    .sectionTwoAuthor p, .sectionTwoAuthor span{
         font-size: 10px;
     }
 }
