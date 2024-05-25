@@ -209,6 +209,10 @@ body::-webkit-scrollbar {
     margin-left: 10%;
 }
 
+.headerNavMenuEscudos img {
+    filter: grayscale(80%);
+}
+
 #overlay {
     position: fixed;
     top: 0;
@@ -228,6 +232,8 @@ body::-webkit-scrollbar {
 }
 
 /* Main */
+
+/* sectionOne */
 .sectionOne {
     height: 100vh;
     width: 0 auto;
@@ -292,6 +298,7 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
 }
 
+/* sectionTwo */
 .sectionTwo {
     max-width: 60%;
     margin: 0 auto;
@@ -364,12 +371,19 @@ body::-webkit-scrollbar {
         transform: scale(1.1);
     }
 
+    .headerNavMenuEscudos img:hover {
+        filter: grayscale(0%);
+        scale: 1.1;
+    }
+
+    /* sectionOne */
     .sectionTwoAuthor a:hover {
         scale: 1.02;
     }
 }
 
 @media only screen and (max-width: 1024px) {
+    /* sectionTwo */
     .sectionTwo {
         max-width: 85%;
     }
@@ -384,6 +398,7 @@ body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 768px) {
+    /* Header */
     .headerContainer {
         height: 100px;
     }
@@ -398,6 +413,7 @@ body::-webkit-scrollbar {
         height: 24px;
     }
 
+    /* sectionOne */
     .sectionOneContainer {
         flex-direction: column;
         justify-content: center;
@@ -413,6 +429,7 @@ body::-webkit-scrollbar {
         margin-top: 180px;
     }
 
+    /* sectionTwo */
     .sectionTwo {
         max-width: 80%;
     }
@@ -444,13 +461,14 @@ body::-webkit-scrollbar {
 }
 
 @media only screen and (max-width: 345px) {
+    /* sectionOne */
     .sectionOne h1 {
         margin-left: 5px;
     }
 }
 
 @media screen and (max-width: 240px) {
-
+    /* Header */
     .headerNav {
         width: 70vw;
         right: -70vw;
@@ -467,6 +485,7 @@ body::-webkit-scrollbar {
 }
 
 @media screen and (max-width: 160px) {
+    /* Header */
     .headerNavMenu ul li i {
         display: none;
     }
