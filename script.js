@@ -6,7 +6,7 @@ const sectionOneH1 = document.querySelector('.sectionOneH1');
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Função genérica para criar o efeito de digitação
+// Função para criar o efeito de digitação
 function typeWriter(element, text) {
     const originalText = text;
     element.innerHTML = '';
@@ -71,5 +71,23 @@ document.addEventListener('touchend', function(event) {
 // Evento de clique em itens do menu para fechar o menu
 const menuItems = document.querySelectorAll('.headerNavMenu a');
 menuItems.forEach(item => {
-    item.addEventListener('click', closeMenu);
+    if (!item.classList.contains('headerNavMenuClube')) { // Verifique se o item não possui a classe
+        item.addEventListener('click', closeMenu);
+    }
 });
+
+const clubesLink = document.querySelector('.headerNavMenuClube');
+const escudosMenu = document.querySelector('.headerNavMenuEscudos');
+
+clubesLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    toggleSubMenu(escudosMenu);
+});
+
+function toggleSubMenu(subMenu) {
+    if (subMenu.style.display === 'none' || subMenu.style.display === '') {
+        subMenu.style.display = 'block';
+    } else {
+        subMenu.style.display = 'none';
+    }
+}
