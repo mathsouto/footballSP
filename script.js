@@ -71,23 +71,26 @@ document.addEventListener('touchend', function(event) {
 // Evento de clique em itens do menu para fechar o menu
 const menuItems = document.querySelectorAll('.headerNavMenu a');
 menuItems.forEach(item => {
-    if (!item.classList.contains('headerNavMenuClube')) { // Verifique se o item não possui a classe
+    if (!item.classList.contains('headerNavMenuClube') && !item.classList.contains('backButton')) { // Verifique se o item não possui a classe
         item.addEventListener('click', closeMenu);
     }
 });
 
-const clubesLink = document.querySelector('.headerNavMenuClube');
+//Submenu
+const mainMenu = document.querySelector('.headerNavMenu ul');
 const escudosMenu = document.querySelector('.headerNavMenuEscudos');
+const clubesLink = document.querySelector('.headerNavMenuClube');
+const backButton = document.querySelector('.headerNavMenuEscudos .backButton');
 
 clubesLink.addEventListener('click', function(event) {
     event.preventDefault();
-    toggleSubMenu(escudosMenu);
+    mainMenu.classList.add('hide');
+    escudosMenu.style.display = 'block';
+    overlay.classList.remove('show'); // Oculta o overlay
 });
 
-function toggleSubMenu(subMenu) {
-    if (subMenu.style.display === 'none' || subMenu.style.display === '') {
-        subMenu.style.display = 'block';
-    } else {
-        subMenu.style.display = 'none';
-    }
-}
+backButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    mainMenu.classList.remove('hide');
+    escudosMenu.style.display = 'none';
+});
