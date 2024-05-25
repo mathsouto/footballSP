@@ -181,6 +181,7 @@ body::-webkit-scrollbar {
     margin-left: 15px;
     font-size: clamp(16px, 1.5vw, 19px);
     color: #ebebeb;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .lineMenu {
