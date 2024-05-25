@@ -132,9 +132,17 @@ body::-webkit-scrollbar {
 
 .headerNavMenu {
     display: flex;
-    justify-content: right;
+    flex-direction: column;
     margin: 50px 0;
-    margin-right: 12%;
+    padding-right: 12%;
+    height: calc(100vh - 97px); /* Altura total menos a altura do topo */
+    overflow-y: scroll; /* Habilitar rolagem vertical */
+    -ms-overflow-style: none;  /* IE e Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.headerNavMenu::-webkit-scrollbar {
+    width: 0; /* Retira a barra de rolagem no Webkit (Chrome, Safari) */
 }
 
 .headerNavMenu ul {
