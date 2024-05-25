@@ -20,6 +20,7 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+
 /* Line */
 .line {
     display: flex;
@@ -27,16 +28,16 @@ body::-webkit-scrollbar {
     margin: 10% 0;
 }
 
-.lineLeft, .lineRight, .lineFull {
+.lineMedium, .lineSmall, .lineFull {
     height: 2px;
     background-color: #E34646;
 }
 
-.lineLeft {
+.lineMedium {
     width: 50%;
 }
 
-.lineRight {
+.lineSmall {
     width: 20%;
 }
 
@@ -156,8 +157,13 @@ body::-webkit-scrollbar {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
 }
+.headerNavMenuClube:hover::before {
+    content: "\3C";
+    margin-right: 5px;
+    color: #E34646;
+}
 
-.headerNav ul li i {
+.headerNavMenu ul li i {
     margin-left: 15px;
     font-size: clamp(16px, 1.5vw, 19px);
     color: #ebebeb;

@@ -6,35 +6,41 @@ const sectionOneH1 = document.querySelector('.sectionOneH1');
 let touchStartX = 0;
 let touchEndX = 0;
 
-// Função para criar o efeito de digitação do título da sectionOne
-function typeWriter(sectionOneH1) {
-    const textoOriginal = sectionOneH1.innerHTML;
-    sectionOneH1.innerHTML = '';
+// Função genérica para criar o efeito de digitação
+function typeWriter(element, text) {
+    const originalText = text;
+    element.innerHTML = '';
     
     let i = 0;
     const interval = setInterval(() => {
-        if (i < textoOriginal.length) {
-            sectionOneH1.innerHTML += textoOriginal.charAt(i);
+        if (i < originalText.length) {
+            element.innerHTML += originalText.charAt(i);
             i++;
         } else {
             clearInterval(interval);
             setTimeout(() => {
-                typeWriter(sectionOneH1); // Reinicia o efeito após um intervalo
+                typeWriter(element, originalText); // Reinicia o efeito após um intervalo
             }, 1000); // Tempo de espera antes de reiniciar
         }
     }, 100); // Velocidade da digitação
 }
-typeWriter(sectionOneH1);
 
+typeWriter(sectionOneH1, sectionOneH1.innerHTML);
 
-// Função para alternar a visibilidade do menu e do overlay
+// Função para fechar o menu e o overlay
+function closeMenu() {
+    headerNav.classList.remove('show');
+    overlay.classList.remove('show');
+}
+
+// Evento de clique no ícone do menu
 menuIcon.addEventListener('click', function(event) {
     event.stopPropagation(); // Impede o clique de propagação para o documento
     headerNav.classList.toggle('show');
     overlay.classList.toggle('show');
 });
 
-// Função para fechar o menu ao clicar fora
+// Evento de clique fora do menu para fechá-lo
 document.addEventListener('click', function(event) {
     const isClickInsideMenu = headerNav.contains(event.target);
     const isClickOnMenuIcon = menuIcon.contains(event.target);
@@ -44,10 +50,8 @@ document.addEventListener('click', function(event) {
     }
 });
 
-// Fechar o menu ao clicar no overlay
-overlay.addEventListener('click', function() {
-    closeMenu();
-});
+// Evento de clique no overlay para fechar o menu
+overlay.addEventListener('click', closeMenu);
 
 // Detectar gesto de arrastar no celular
 document.addEventListener('touchstart', function(event) {
@@ -64,8 +68,8 @@ document.addEventListener('touchend', function(event) {
     }
 });
 
-// Função para fechar o menu
-function closeMenu() {
-    headerNav.classList.remove('show');
-    overlay.classList.remove('show');
-}
+// Evento de clique em itens do menu para fechar o menu
+const menuItems = document.querySelectorAll('.headerNavMenu a');
+menuItems.forEach(item => {
+    item.addEventListener('click', closeMenu);
+});
