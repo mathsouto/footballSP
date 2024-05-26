@@ -1,51 +1,29 @@
 const menuIcon = document.getElementById('menuIcon');
 const headerNav = document.querySelector('.headerNav');
 const overlay = document.getElementById('overlay');
-const sectionOneH1 = document.querySelector('.sectionOneH1');
-
-let touchStartX = 0;
-let touchEndX = 0;
-
-// Função para criar o efeito de digitação
-function typeWriter(element, text) {
-    const originalText = text;
-    element.innerHTML = '';
-    
-    let i = 0;
-    const interval = setInterval(() => {
-        if (i < originalText.length) {
-            element.innerHTML += originalText.charAt(i);
-            i++;
-        } else {
-            clearInterval(interval);
-            setTimeout(() => {
-                typeWriter(element, originalText); // Reinicia o efeito após um intervalo
-            }, 1000); // Tempo de espera antes de reiniciar
-        }
-    }, 100); // Velocidade da digitação
-}
-
-typeWriter(sectionOneH1, sectionOneH1.innerHTML);
+const clubesLink = document.querySelector('.headerNavMenuClube');
+const clubesSubmenu = document.querySelector('.headerNavMenuEscudos');
+const mainMenu = document.querySelector('.headerNavMenu ul');
+const backButton = document.querySelector('.headerNavMenuEscudos .backButton');
 
 // Função para fechar o menu e o overlay
-function closeMenu() {
+const closeMenu = () => {
     headerNav.classList.remove('show');
     overlay.classList.remove('show');
-}
+    clubesSubmenu.style.display = 'none';
+    mainMenu.classList.remove('hide');
+};
 
 // Evento de clique no ícone do menu
-menuIcon.addEventListener('click', function(event) {
-    event.stopPropagation(); // Impede o clique de propagação para o documento
+menuIcon.addEventListener('click', (event) => {
+    event.stopPropagation();
     headerNav.classList.toggle('show');
     overlay.classList.toggle('show');
 });
 
-// Evento de clique fora do menu para fechá-lo
-document.addEventListener('click', function(event) {
-    const isClickInsideMenu = headerNav.contains(event.target);
-    const isClickOnMenuIcon = menuIcon.contains(event.target);
-    
-    if (!isClickInsideMenu && !isClickOnMenuIcon) {
+// Evento de clique no documento para fechar o menu
+document.addEventListener('click', (event) => {
+    if (!headerNav.contains(event.target) && !menuIcon.contains(event.target) && !event.target.classList.contains('headerNavMenuClube')) {
         closeMenu();
     }
 });
@@ -54,43 +32,39 @@ document.addEventListener('click', function(event) {
 overlay.addEventListener('click', closeMenu);
 
 // Detectar gesto de arrastar no celular
-document.addEventListener('touchstart', function(event) {
-    touchStartX = event.touches[0].clientX;
-});
+let touchStartX = 0; // Inicializa a coordenada X do toque inicial como 0
+const handleTouchStart = (event) => {
+    touchStartX = event.touches[0].clientX; // Captura a coordenada X do toque inicial
+};
 
-document.addEventListener('touchmove', function(event) {
-    touchEndX = event.touches[0].clientX;
-});
-
-document.addEventListener('touchend', function(event) {
-    if (touchEndX - touchStartX > 50) {
-        closeMenu();
+const handleTouchMove = (event) => {
+    const touchEndX = event.touches[0].clientX; // Captura a coordenada X do toque atual
+    if (touchEndX - touchStartX > 50) { // Verifica se o gesto de deslizar para a direita foi realizado
+        closeMenu(); // Fecha o menu
     }
-});
+};
+
+document.addEventListener('touchstart', handleTouchStart);
+document.addEventListener('touchmove', handleTouchMove);
+
 
 // Evento de clique em itens do menu para fechar o menu
-const menuItems = document.querySelectorAll('.headerNavMenu a');
-menuItems.forEach(item => {
-    if (!item.classList.contains('headerNavMenuClube') && !item.classList.contains('backButton')) { // Verifique se o item não possui a classe
-        item.addEventListener('click', closeMenu);
-    }
+document.querySelectorAll('.headerNavMenu a:not(.headerNavMenuClube):not(.backButton)').forEach(item => {
+    item.addEventListener('click', closeMenu);
 });
 
-//Submenu
-const mainMenu = document.querySelector('.headerNavMenu ul');
-const escudosMenu = document.querySelector('.headerNavMenuEscudos');
-const clubesLink = document.querySelector('.headerNavMenuClube');
-const backButton = document.querySelector('.headerNavMenuEscudos .backButton');
-
-clubesLink.addEventListener('click', function(event) {
+// Evento de clique no link "Clubes" para mostrar o submenu e manter o overlay
+clubesLink.addEventListener('click', (event) => {
     event.preventDefault();
     mainMenu.classList.add('hide');
-    escudosMenu.style.display = 'block';
-    overlay.classList.remove('show'); // Oculta o overlay
+    clubesSubmenu.style.display = 'block';
+    event.stopPropagation();
 });
 
-backButton.addEventListener('click', function(event) {
+// Evento de clique no botão de voltar no submenu para voltar ao menu principal
+backButton.addEventListener('click', (event) => {
     event.preventDefault();
     mainMenu.classList.remove('hide');
-    escudosMenu.style.display = 'none';
+    clubesSubmenu.style.display = 'none';
+    overlay.classList.add('show');
 });
