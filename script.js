@@ -5,6 +5,27 @@ const clubesLink = document.querySelector('.headerNavMenuClube');
 const clubesSubmenu = document.querySelector('.headerNavMenuEscudos');
 const mainMenu = document.querySelector('.headerNavMenu ul');
 const backButton = document.querySelector('.headerNavMenuEscudos .backButton');
+const sectionOneH1 = document.querySelector('.sectionOneH1');
+
+// Função para criar o efeito de digitação
+function typeWriter(element, text) {
+    const originalText = text;
+    element.innerHTML = '';
+
+    let i = 0;
+    const interval = setInterval(() => {
+        if (i < originalText.length) {
+            element.innerHTML += originalText.charAt(i);
+            i++;
+        } else {
+            clearInterval(interval);
+            setTimeout(() => {
+                typeWriter(element, originalText); // Reinicia o efeito após um intervalo
+            }, 1000); // Tempo de espera antes de reiniciar
+        }
+    }, 100); // Velocidade da digitação
+}
+typeWriter(sectionOneH1, sectionOneH1.innerHTML);
 
 // Função para fechar o menu e o overlay
 const closeMenu = () => {
