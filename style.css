@@ -233,8 +233,6 @@ body::-webkit-scrollbar {
 }
 
 /* Main */
-
-/* sectionOne */
 .sectionOne {
     height: 100vh;
     width: 0 auto;
@@ -299,21 +297,23 @@ body::-webkit-scrollbar {
     background-repeat: no-repeat;
 }
 
-/* sectionTwo */
 .sectionTwo {
     max-width: 60%;
     margin: 0 auto;
 }
 
-.sectionTwoTitle p, .sectionTwoTitle span {
+.sectionTwoTitle {
+    margin-bottom: 20px;
+}
+
+.sectionTwoContainer p, .sectionTwoContainer span {
     color: white;
     font-family: "IM Fell DW Pica SC", serif;
     font-size: clamp(23px, 1.5vw, 26px);
     font-weight: lighter;
-    margin-bottom: 22px;
 }
 
-.sectionTwoTitle span {
+.sectionTwoContainer span {
     color: #E34646;
     font-size: clamp(23px, 1.5vw, 26px);
 }
@@ -325,7 +325,7 @@ body::-webkit-scrollbar {
 .sectionTwoBox .sectionTwoText {
     text-align: justify;
     font-family: "Inter", sans-serif;
-    font-size: 18px;
+    font-size: clamp(14px, 1.5vw, 18px);
     padding-right: 10%;
 }
 
@@ -339,7 +339,8 @@ body::-webkit-scrollbar {
 }
 
 .sectionTwoAuthor img {
-    width: 232px;
+    width: 100%;
+    min-width: 232px;
     height: auto;
     cursor: pointer;
 }
@@ -347,7 +348,7 @@ body::-webkit-scrollbar {
 .sectionTwoAuthor p {
     font-family: "Inter", sans-serif;
     color: white;
-    font-size: 16px;
+    font-size: clamp(8px, 1.5vw, 11px);
     font-weight: 200;
     text-align: right;
     margin-top: 10px;
@@ -356,13 +357,85 @@ body::-webkit-scrollbar {
 .sectionTwoAuthor span {
     font-family: "Inter", sans-serif;
     color: #E34646;
-    font-size: 16px;
+    font-size: 11px;
+    font-size: clamp(8px, 1.5vw, 11px);
     font-weight: 200;
 }
 
+.sectionThree {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.sectionThreeTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sectionThreeContainer p, .sectionThreeContainer span {
+    color: white;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+    font-weight: lighter;
+}
+
+.sectionThreeContainer span {
+    color: #E34646;
+    font-size: clamp(23px, 1.5vw, 26px);
+}
+
+.sectionThreeBox {
+    display: flex;
+}
+
+.sectionThreeTeam img {
+    width: 100%; /* Faz com que a imagem ocupe toda a largura do contêiner */
+    min-width: 260px; /* Limita a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    cursor: pointer;
+}
+
+.sectionThreeTeam p {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: clamp(8px, 1.5vw, 11px);
+    font-weight: 200;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.sectionThreeTexts p {
+    text-align: justify;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    padding-left: 10%;
+}
+
+.sectionThreeTeam span {
+    font-family: "Inter", sans-serif;
+    color: #E34646;
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.sectionThreeText {
+    margin-bottom: 12px;
+}
+
+.sectionThreeTexts2 {
+    margin-top: 20px;
+}
+
+.sectionThreeTexts2 p {
+    text-align: justify;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+
+
 /* Media Queries */
 @media (hover:hover) and (pointer:fine) {
-    /* Header */
     .headerNavMenu ul li a:hover {
         color: #ebebeb;
     }
@@ -377,29 +450,22 @@ body::-webkit-scrollbar {
         scale: 1.1;
     }
 
-    /* sectionOne */
     .sectionTwoAuthor a:hover {
         scale: 1.02;
     }
 }
 
 @media only screen and (max-width: 1024px) {
-    /* sectionTwo */
     .sectionTwo {
         max-width: 85%;
     }
 
-    .sectionTwoAuthor img {
-        width: 174px;
-    }
-
-    .sectionTwoAuthor p, .sectionTwoAuthor span {
-        font-size: 14px;
+    .sectionThree {
+        max-width: 85%;
     }
 }
 
 @media only screen and (max-width: 768px) {
-    /* Header */
     .headerContainer {
         height: 100px;
     }
@@ -414,7 +480,6 @@ body::-webkit-scrollbar {
         height: 24px;
     }
 
-    /* sectionOne */
     .sectionOneContainer {
         flex-direction: column;
         justify-content: center;
@@ -430,21 +495,19 @@ body::-webkit-scrollbar {
         margin-top: 180px;
     }
 
-    /* sectionTwo */
     .sectionTwo {
         max-width: 80%;
     }
 
-    .sectionTwoTitle p, .sectionTwoTitle span {
+    .sectionTwoTitle {
         text-align: center;
     }
-
+    
     .sectionTwoBox {
         flex-direction: column-reverse;
     }
 
-    .sectionTwoBox .sectionTwoText {
-        font-size: 14px;
+    .sectionTwoBox .sectionTwoText{
         padding-right: 0;
     }
 
@@ -453,23 +516,45 @@ body::-webkit-scrollbar {
     }
 
     .sectionTwoAuthor img {
-        width: 116px;
+        min-width: 100px;
+        max-width: 100px;
     }
 
     .sectionTwoAuthor p, .sectionTwoAuthor span {
-        font-size: 10px;
+        margin-bottom: 20px;
     }
+
+    .sectionThree {
+        max-width: 80%;
+    }
+
+    .sectionThreeBox {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .sectionThreeTeam {
+        margin: 20px 0;
+    }
+
+    .sectionThreeBox img {
+        min-width: 100px; /* Limita a largura máxima da imagem */        min-width: 100px;
+        max-width: 190px;
+    }
+
+    .sectionThreeTexts p, .sectionThreeTexts2 p{
+        padding-left: 0;
+    }
+
 }
 
 @media only screen and (max-width: 345px) {
-    /* sectionOne */
     .sectionOne h1 {
         margin-left: 5px;
     }
 }
 
 @media screen and (max-width: 240px) {
-    /* Header */
     .headerNav {
         width: 70vw;
         right: -70vw;
@@ -486,7 +571,6 @@ body::-webkit-scrollbar {
 }
 
 @media screen and (max-width: 160px) {
-    /* Header */
     .headerNavMenu ul li i {
         display: none;
     }
