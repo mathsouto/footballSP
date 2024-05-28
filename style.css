@@ -37,7 +37,7 @@ body::-webkit-scrollbar {
 }
 
 .lineMedium {
-    width: 50%;
+    width: 35%;
 }
 
 .lineSmall {
@@ -365,7 +365,7 @@ body::-webkit-scrollbar {
 }
 
 .sectionThreeTitle {
-    text-align: start;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -430,6 +430,40 @@ body::-webkit-scrollbar {
     font-size: clamp(14px, 1.5vw, 18px);
 }
 
+.sectionFour {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.sectionFourTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+    font-weight: lighter;
+}
+
+.mainBG {
+    background-image: url('./assets/imgs/mainBG.png'); /* Caminho para sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
+    background-position: center; /* Centraliza horizontal e verticalmente */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+}
+
+.sectionFinal {
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.sectionFinalTitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+    font-weight: lighter;
+}
 
 
 /* Media Queries */
@@ -535,6 +569,10 @@ body::-webkit-scrollbar {
         max-width: 80%;
     }
 
+    .sectionThreeTitle {
+        text-align: start;
+    }
+
     .sectionThreeBox {
         flex-direction: column-reverse;
         align-items: center;
@@ -552,7 +590,6 @@ body::-webkit-scrollbar {
     .sectionThreeTexts p, .sectionThreeTexts2 p{
         padding-left: 0;
     }
-
 }
 
 @media only screen and (max-width: 345px) {
