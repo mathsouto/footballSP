@@ -454,21 +454,75 @@ body::-webkit-scrollbar {
     font-weight: lighter;
 }
 
-.sectionFourBox {
+.sectionFourSlider {
+    margin: 0 auto;
+    width: 30vw;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    /* background-color: red; */
+}
+
+.sectionFourSlides {
+    width: 400%; /* Este valor é alto, pode ser otimizado */
+    height: auto;
     display: flex;
-    align-items: center;
+}
+
+.sectionFourSlides input[type="radio"] {
+    display: none; /* Seleção direta para inputs de tipo radio */
+}
+
+.slide {
+    width: 25%;
+    position: relative;
+    transition: 0.5s; /* Reduzindo o tempo de transição */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Substituindo background-size: cover; */
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 30vw;
+    margin-top: -40px;
+    display: flex;
     justify-content: center;
 }
 
-.sectionFourCarousel {
-    display: flex;
+.manual-btn {
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-.boxTeste{
-    width: 200px;
-    height: 200px;
-    background-color: white;
-    margin: 5px;
+.manual-btn.active {
+    background-color: #E34646; /* Destaque para a bolinha ativa */
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 25px;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first {
+    margin-left: -25%;
+}
+
+#radio3:checked ~ .first {
+    margin-left: -50%;
+}
+
+#radio4:checked ~ .first {
+    margin-left: -75%;
 }
 
 .mainBG {
@@ -605,6 +659,10 @@ body::-webkit-scrollbar {
         scale: 1.02;
     }
 
+    .manual-btn:hover { 
+        background-color: #E34646;
+    }    
+
     .sectionFinalIcons a img:hover {
         filter: saturate(90%);
         scale: 1.1;
@@ -634,6 +692,15 @@ body::-webkit-scrollbar {
 
     .sectionFour {
         max-width: 85%;
+    }
+
+    .sectionFourSlider {
+        width: 40vw;
+    }
+
+    .manual-navigation {
+        width: 40vw;
+        margin-top: -30px;
     }
 
     .sectionFinalContainer {
@@ -735,6 +802,14 @@ body::-webkit-scrollbar {
         max-width: 80%;
     }
 
+    .sectionFourSlider {
+        width: 50vw;
+    }
+
+    .manual-navigation {
+        width: 50vw;
+    }
+
     .sectionFinalContainer {
         max-width: 80%;
     }
@@ -757,6 +832,11 @@ body::-webkit-scrollbar {
     .sectionOne h1 {
         margin-left: 5px;
     }
+
+    .manual-btn {
+        display: none;
+    }
+
 }
 
 @media screen and (max-width: 240px) {

@@ -25,8 +25,8 @@
                     <div class="headerNavMenu">
                         <ul>
                             <li><a href="/">Home</a><i class="fas fa-house"></i></li>
-                            <li><a href="#history">História</a><i class="fas fa-book-open"></i></li>
-                            <li><a href="#registros">Registros</a><i class="fas fa-image"></i></li>
+                            <li><a href="#historiaHome">História</a><i class="fas fa-book-open"></i></li>
+                            <li><a href="#registrosHome">Registros</a><i class="fas fa-image"></i></li>
                             <div class="lineMenu"></div>
                             <li><a class="headerNavMenuClube" href="#">Clubes</a><i class="fas fa-shield"></i></li>
                             <div class="lineMenu"></div>
@@ -63,7 +63,7 @@
             <div class="sectionOneBG"></div>
         </section>
         <div class="mainBG">
-            <section class="sectionTwo" id="history">
+            <section class="sectionTwo" id="historiaHome">
                 <div class="sectionTwoContainer">
                     <p class="sectionTwoTitle">Futebol <br>em <span>São Paulo</span></p>
                     <div class="sectionTwoBox">
@@ -109,16 +109,39 @@
                 </div>
             </section>
         </div>    
-        <section class="sectionFour">
+        <section class="sectionFour" id="registrosHome">
             <div class="sectionFourContainer">
                 <p class="sectionFourTitle">Registros</p>
-                <div class="sectionFourBox">
-                    <div class="sectionFourCarousel">
-                        <!-- <div class="boxTeste"></div>
-                        <div class="boxTeste"></div>
-                        <div class="boxTeste"></div>
-                        <div class="boxTeste"></div>
-                        <div class="boxTeste"></div> -->
+                <div class="sectionFourSlider">
+                    <div class="sectionFourSlides">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <div class="slide first">
+                            <img src="./assets/imgs/carousel/1.jpg" alt="img 1">
+                        </div>
+                        <div class="slide">
+                            <img src="./assets/imgs/carousel/2.jpg" alt="img 2">
+                        </div>
+                        <div class="slide">
+                            <img src="./assets/imgs/carousel/3.jpg" alt="img 2">
+                        </div>
+                        <div class="slide">
+                            <img src="./assets/imgs/carousel/4.jpg" alt="img 2">
+                        </div>
+                        <div class="navigation-auto">
+                            <div class="auto-btn1"></div>
+                            <div class="auto-btn2"></div>
+                            <div class="auto-btn3"></div>
+                            <div class="auto-btn4"></div>
+                        </div>
+                    </div>
+                    <div class="manual-navigation">
+                        <label for="radio1" class="manual-btn"></label>
+                        <label for="radio2" class="manual-btn"></label>
+                        <label for="radio3" class="manual-btn"></label>
+                        <label for="radio4" class="manual-btn"></label>
                     </div>
                 </div>
             </div>

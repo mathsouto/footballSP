@@ -89,3 +89,71 @@ backButton.addEventListener('click', (event) => {
     clubesSubmenu.style.display = 'none';
     overlay.classList.add('show');
 });
+
+
+//Carrosel de imagens
+let count = 1;
+const totalSlides = 4;
+const manualBtns = document.querySelectorAll('.manual-btn');
+const sectionFourSlides = document.querySelector('.sectionFourSlides');
+let startX = 0;
+let isDragging = false;
+
+// Inicialização
+document.getElementById("radio1").checked = true;
+manualBtns[0].classList.add('active');
+
+// Configuração de intervalo para mudança automática de imagens
+const interval = setInterval(nextImage, 5000);
+
+function nextImage() {
+    count = (count % totalSlides) + 1;
+    updateSlide();
+}
+
+function prevImage() {
+    count = (count - 2 + totalSlides) % totalSlides + 1;
+    updateSlide();
+}
+
+// Atualiza o slide e os botões ativos
+function updateSlide() {
+    document.getElementById("radio" + count).checked = true;
+    manualBtns.forEach(btn => btn.classList.remove('active'));
+    manualBtns[count - 1].classList.add('active');
+}
+
+// Adiciona event listeners aos botões manuais
+manualBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        count = index + 1;
+        updateSlide();
+    });
+});
+
+// Eventos de toque para arrastar
+sectionFourSlides.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+});
+
+sectionFourSlides.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const diffX = startX - currentX;
+
+    // Deslizar para a esquerda (próxima imagem)
+    if (diffX > 50) {
+        nextImage();
+        isDragging = false;
+    }
+    // Deslizar para a direita (imagem anterior)
+    if (diffX < -50) {
+        prevImage();
+        isDragging = false;
+    }
+});
+
+sectionFourSlides.addEventListener('touchend', () => {
+    isDragging = false;
+});
