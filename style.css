@@ -525,6 +525,14 @@ body::-webkit-scrollbar {
     margin-left: -75%;
 }
 
+.sectionFourContainer .sectionFourText{
+    margin-top: 50px;
+    text-align: center;
+    font-size: clamp(12px, 1.5vw, 15px);
+    font-family: "Inter", sans-serif;
+    font-weight: 100;
+}
+
 .mainBG {
     background-image: url('./assets/imgs/BGMain.png'); /* Caminho para sua imagem */
     background-size: cover; /* Ajusta a imagem para cobrir todo o elemento */
