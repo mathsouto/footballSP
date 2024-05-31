@@ -286,10 +286,27 @@ body::-webkit-scrollbar {
     }
 }
 
-.sectionOneAnimation {
-    background-color: white;
-    text-align: center;
+/* .sectionOneAnimation {
+    width: 20%;
+    height: auto;
+    position: relative;
 }
+
+.flip-image {
+    width: 100%;
+    height: auto;
+    transition: transform 1s;
+    animation: zoom 2s ease-in-out infinite;
+}
+
+@keyframes zoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+} */
 
 .sectionOneBG {
     position: absolute;
