@@ -241,7 +241,7 @@ body::-webkit-scrollbar {
     visibility: visible;
 }
 
-/* Main */
+/* Main HOME */
 .sectionOne {
     height: 100vh;
     width: 0 auto;
@@ -378,7 +378,6 @@ body::-webkit-scrollbar {
 .sectionTwoAuthor span {
     font-family: "Inter", sans-serif;
     color: #E34646;
-    font-size: 11px;
     font-size: clamp(9px, 1.5vw, 11px);
     font-weight: 200;
 }
@@ -660,6 +659,97 @@ body::-webkit-scrollbar {
     font-weight: lighter;
 }
 
+/* SPFC */
+.sectionOneBGSPFC {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    z-index: -1;
+    background-image: url('./assets/imgs/BGFirstSPFC.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sectionTwoBoxSPFC .sectionTwoText {
+    text-align: justify;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.sectionTwoBox2SPFC {
+    display: flex;
+    margin-top: 2%;
+}
+
+.sectionTwoBox2SPFC .sectionTwoTextSPFC {
+    text-align: justify;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    padding-right: 10%;
+}
+
+.sectionTwoIMGSPFC {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sectionTwoIMGSPFC img {
+    border-radius: 10px;
+    width: 100%;
+    min-width: 390px;
+    height: auto;
+    cursor: pointer;
+    transition: ease-in-out 0.3s all;
+}
+
+.sectionTwoIMGSPFC p {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: clamp(9px, 1.5vw, 11px);
+    font-weight: 200;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.sectionTwoIMGSPFC span {
+    font-family: "Inter", sans-serif;
+    color: #E34646;
+    font-size: clamp(9px, 1.5vw, 11px);
+    font-weight: 200;
+}
+
+.sectionThreeContainerSPFC {
+    height: 50vh;
+}
+
+.sectionFinalBoxSPFC {
+    margin: 30% 0;
+}
+
+.sectionFinalTitleSPFC {
+    text-align: center;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(8px, 1.5vw, 13px);
+    font-weight: lighter;
+}
+
+.sectionFinalTextSPFC {
+    text-align: center;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(15px, 1.5vw, 20px);
+    font-weight: 200;
+}
+
+/* SCCP */
+
+/* APD */
+
 /* Media Queries */
 @media (hover:hover) and (pointer:fine) {
     .headerNavMenu ul li a:hover {
@@ -680,6 +770,10 @@ body::-webkit-scrollbar {
         scale: 1.02;
     }
 
+    .sectionTwoIMGSPFC img:hover {
+        scale: 1.02;
+    }
+
     .sectionThreeTeam img:hover {
         scale: 1.02;
     }
@@ -696,6 +790,27 @@ body::-webkit-scrollbar {
     .footerIcons img:hover{
         scale: 1.1;
     }
+}
+
+@media only screen and (max-width: 1366px) {
+    .sectionTwoBox2SPFC {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 20px 0;
+    }
+    
+    .sectionTwoIMGSPFC {
+        margin: 5% 0;
+    }
+    
+    .sectionTwoBox2SPFC .sectionTwoTextSPFC {
+        padding-right: 0%;
+    }
+
+    .sectionTwoIMGSPFC img {
+        min-width: 10px;
+        max-width: 400px;
+    }   
 }
 
 @media only screen and (max-width: 1024px) {
@@ -789,9 +904,14 @@ body::-webkit-scrollbar {
     }
 
     .sectionTwoAuthor img {
-        min-width: 100px;
+        min-width: 10px;
         max-width: 100px;
     }
+
+    .sectionTwoIMGSPFC img {
+        min-width: 10px;
+        max-width: 250px;
+    }   
 
     .sectionTwoAuthor p, .sectionTwoAuthor span {
         margin-bottom: 20px;
@@ -815,7 +935,7 @@ body::-webkit-scrollbar {
     }
 
     .sectionThreeBox img {
-        min-width: 100px;
+        min-width: 10px;
         max-width: 190px;
     }
 
