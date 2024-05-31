@@ -145,7 +145,7 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     margin: 50px 0;
-    padding-right: 12%;
+    padding-right: 20%;
     height: calc(100vh - 97px); /* Altura total menos a altura do topo */
     overflow-y: scroll; /* Habilitar rolagem vertical */
     -ms-overflow-style: none;  /* IE e Edge */
@@ -220,7 +220,7 @@ body::-webkit-scrollbar {
 }
 
 .headerNavMenuEscudos img {
-    filter: grayscale(80%);
+    filter: saturate(10%);
 }
 
 #overlay {
@@ -515,6 +515,12 @@ body::-webkit-scrollbar {
     font-weight: lighter;
 }
 
+.sectionFinalTitle span {
+    color: #E34646;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+}
+
 .sectionFinalIcons {
     display: flex;
     margin: 150px 0;
@@ -523,13 +529,15 @@ body::-webkit-scrollbar {
 }
 
 .sectionFinalIcons a{
-    margin: 0 1.5vw;
+    margin: 0 3vw;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .sectionFinalIcons a img {
-    width: clamp(100%, 15.5px, 30px);
+    width: 62px;
     height: auto;
-    filter: grayscale(80%);
+    filter: saturate(10%);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .sectionFinalText {
@@ -538,11 +546,12 @@ body::-webkit-scrollbar {
     text-align: center;
     font-size: clamp(14px, 1.5vw, 18px);
     font-weight: 200;
+    text-shadow: 4px 1px 14px rgb(0, 0, 0);
 }
 
 .footerContainer {
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-color: #262626;
     display: flex; 
     flex-direction: column;
@@ -557,10 +566,11 @@ body::-webkit-scrollbar {
 
 
 .footerIcons .icon {
-    width: clamp(23px, 2vw, 35px);
+    width: clamp(25px, 2vw, 30px);
     height: auto;
     margin: 0 1.5vw;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
     
 
@@ -583,7 +593,7 @@ body::-webkit-scrollbar {
     }
 
     .headerNavMenuEscudos img:hover {
-        filter: grayscale(0%);
+        filter: saturate(100%);
         scale: 1.1;
     }
 
@@ -596,7 +606,7 @@ body::-webkit-scrollbar {
     }
 
     .sectionFinalIcons a img:hover {
-        filter: grayscale(0%);
+        filter: saturate(90%);
         scale: 1.1;
     }
 
@@ -731,12 +741,16 @@ body::-webkit-scrollbar {
 
     .sectionFinalIcons {
         flex-direction: column;
+        margin: 100px 0;
     }
 
     .sectionFinalIcons a{
         margin: 5vw 0;
     }
 
+    .sectionFinalIcons a img {
+        width: 44px;
+    }    
 }
 
 @media only screen and (max-width: 345px) {
