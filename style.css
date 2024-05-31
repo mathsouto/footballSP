@@ -755,7 +755,7 @@ body::-webkit-scrollbar {
     .sectionOneContainer {
         flex-direction: column;
         justify-content: center;
-        height: 80vh;
+        height: 65vh;
     }
 
     .sectionOne h1 {
