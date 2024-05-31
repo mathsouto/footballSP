@@ -526,7 +526,7 @@ body::-webkit-scrollbar {
 }
 
 .sectionFourContainer .sectionFourText{
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
     font-size: clamp(12px, 1.5vw, 15px);
     font-family: "Inter", sans-serif;
@@ -606,7 +606,7 @@ body::-webkit-scrollbar {
     font-family: "Inter", sans-serif;
     color: white;
     text-align: center;
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-size: clamp(12px, 1.5vw, 15px);
     font-weight: 200;
     text-shadow: 4px 1px 14px rgb(0, 0, 0);
 }
@@ -703,11 +703,11 @@ body::-webkit-scrollbar {
     }
 
     .sectionFourSlider {
-        width: 40vw;
+        width: 45vw;
     }
 
     .manual-navigation {
-        width: 40vw;
+        width: 45vw;
         margin-top: -30px;
     }
 
@@ -811,11 +811,11 @@ body::-webkit-scrollbar {
     }
 
     .sectionFourSlider {
-        width: 60vw;
+        width: 70vw;
     }
 
     .manual-navigation {
-        width: 60vw;
+        width: 70vw;
     }
 
     .sectionFinalContainer {
