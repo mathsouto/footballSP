@@ -458,9 +458,9 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
-.sectionFourTitleClubes {
+.sectionFourTitle {
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 .sectionFourContainer p, .sectionFourContainer span {
@@ -730,6 +730,10 @@ body::-webkit-scrollbar {
     height: 50vh;
 }
 
+.sectionFourTitleClubes {
+    margin-bottom: 20px;
+}
+
 .sectionFourBoxClubes {
     display: flex;
 }
@@ -742,7 +746,23 @@ body::-webkit-scrollbar {
     transition: ease-in-out 0.3s all;
 }
 
-.sectionFourBoxClubes p {
+.sectionFourIMG p {
+    font-family: "Inter", sans-serif;
+    color: white;
+    font-size: clamp(9px, 1.5vw, 11px);
+    font-weight: 200;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.sectionFourIMG span {
+    font-family: "Inter", sans-serif;
+    color: #E34646;
+    font-size: clamp(9px, 1.5vw, 11px);
+    font-weight: 200;
+}
+
+.sectionFourBoxClubes .sectionFourBoxText {
     text-align: justify;
     font-family: "Inter", sans-serif;
     font-size: clamp(14px, 1.5vw, 18px);
@@ -806,8 +826,13 @@ body::-webkit-scrollbar {
     .footerIcons img:hover{
         scale: 1.1;
     }
+
     /* Clubes */
     .sectionTwoIMGClubes img:hover {
+        scale: 1.02;
+    }
+
+    .sectionFourBoxClubes img:hover{
         scale: 1.02;
     }
 }
@@ -846,8 +871,11 @@ body::-webkit-scrollbar {
         max-width: 390px;
     }  
 
-    .sectionFourBoxClubes p {
+    .sectionFourBoxClubes .sectionFourBoxText {
         padding-left: 0%;
+    }
+
+    .sectionFourBoxClubes p {
         margin-bottom: 5%;
     }  
 }
