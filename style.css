@@ -458,9 +458,9 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
-.sectionFourTitle {
+.sectionFourTitleClubes {
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
 }
 
 .sectionFourContainer p, .sectionFourContainer span {
@@ -831,6 +831,10 @@ body::-webkit-scrollbar {
         min-width: 10px;
         max-width: 400px;
     }   
+
+    .sectionFourTitleClubes {
+        text-align: center;
+    }    
 
     .sectionFourBoxClubes {
         flex-direction: column-reverse;
