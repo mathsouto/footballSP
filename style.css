@@ -669,33 +669,53 @@ body::-webkit-scrollbar {
 }
 
 /* Clubes */
-
-/* Imagens SPFC */
-.sectionOneBGSPFC {
+.sectionOneBGSPFC, .sectionOneBGSCCP, .sectionOneBGAPD {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 120%;
     z-index: -1;
-    background-image: url('./assets/imgs/BGFirstSPFC.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.sectionFinalSPFC {
+.sectionFinalSPFC, .sectionFinalSCCP, .sectionFinalAPD {
     width: 100%;
     height: 100%;
     margin: 0 auto;
     position: relative;
-    background-image: url('./assets/imgs/BGFinalSPFC.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.sectionOneBGSPFC {
+    background-image: url('./assets/imgs/BGFirstSPFC.png');
+}
+
+.sectionFinalSPFC {
+    background-image: url('./assets/imgs/BGFinalSPFC.png');
+}
+
+.sectionOneBGSCCP {
+    background-image: url('./assets/imgs/BGFirstSCCP.png');
+}
+
+.sectionFinalSCCP {
+    background-image: url('./assets/imgs/BGFinalSCCP.png');
+}
+
+.sectionOneBGAPD {
+    background-image: url('./assets/imgs/BGFirstAPD.png');
+}
+
+.sectionFinalAPD {
+    background-image: url('./assets/imgs/BGFinalAPD.png');
 }
 
 .sectionTwoBoxClubes p {
@@ -886,7 +906,8 @@ body::-webkit-scrollbar {
 
 .questionLabel {
     text-align: center;
-    margin: 10% 0;
+    margin-top: 15%;
+    margin-bottom: 10%;
     font-family: "Inter", sans-serif;
     font-size: clamp(14px, 1.5vw, 19px);
 }
@@ -929,7 +950,7 @@ body::-webkit-scrollbar {
 }
 
 .sectionFinalBoxClubes {
-    margin: 25% 0;
+    margin: 35% 0;
 }
 
 .sectionFinalTitleClubes {
@@ -1237,6 +1258,7 @@ body::-webkit-scrollbar {
 
     .sectionQuizContainer {
         width: 70%;
+        height: 35vh;
     }
 }
 
