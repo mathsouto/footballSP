@@ -669,6 +669,8 @@ body::-webkit-scrollbar {
 }
 
 /* Clubes */
+
+/* Imagens SPFC */
 .sectionOneBGSPFC {
     position: absolute;
     top: 0;
@@ -680,6 +682,20 @@ body::-webkit-scrollbar {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+.sectionFinalSPFC {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    background-image: url('./assets/imgs/BGFinalSPFC.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .sectionTwoBoxClubes p {
@@ -913,7 +929,7 @@ body::-webkit-scrollbar {
 }
 
 .sectionFinalBoxClubes {
-    margin: 30% 0;
+    margin: 25% 0;
 }
 
 .sectionFinalTitleClubes {
