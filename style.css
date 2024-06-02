@@ -14,6 +14,7 @@ body {
     margin: 0 auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    min-width: 120px;
 }
 
 body::-webkit-scrollbar {
@@ -72,6 +73,10 @@ body::-webkit-scrollbar {
     align-items: center;
     width: 100%;
     margin: 0 7%;
+}
+
+.headerMin{
+    display: none;
 }
 
 .headerMenu a, .headerMenu span {
@@ -146,10 +151,10 @@ body::-webkit-scrollbar {
     flex-direction: column;
     margin: 50px 0;
     padding-right: 20%;
-    height: calc(100vh - 97px); /* Altura total menos a altura do topo */
-    overflow-y: scroll; /* Habilitar rolagem vertical */
-    -ms-overflow-style: none;  /* IE e Edge */
-    scrollbar-width: none;  /* Firefox */
+    height: calc(100vh - 97px);
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .headerNavMenu::-webkit-scrollbar {
@@ -180,6 +185,7 @@ body::-webkit-scrollbar {
     -webkit-tap-highlight-color: transparent;
     cursor: pointer;
 }
+
 .headerNavMenuClube:hover::before {
     content: "\3C";
     margin-right: 5px;
@@ -203,14 +209,14 @@ body::-webkit-scrollbar {
 .headerNavMenuEscudos ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px; /* Espaço entre os itens */
+    grid-gap: 10px;
     padding: 0;
     margin: 0 auto;
     margin-left: 40%;
 }
 
 .headerNavMenuEscudos ul li {
-    list-style: none; /* Remover os marcadores de lista */
+    list-style: none;
 }
 
 .headerNavMenuEscudos .backButton {
@@ -353,12 +359,12 @@ body::-webkit-scrollbar {
     padding-right: 10%;
 }
 
-.sectionTwoAuthor {
+.sectionTwoIMG {
     display: flex;
     flex-direction: column;
 }
 
-.sectionTwoAuthor img {
+.sectionTwoIMG img {
     width: 100%;
     min-width: 200px;
     height: auto;
@@ -366,7 +372,7 @@ body::-webkit-scrollbar {
     transition: ease-in-out 0.3s all;
 }
 
-.sectionTwoAuthor p {
+.sectionTwoIMG p {
     font-family: "Inter", sans-serif;
     color: white;
     font-size: clamp(9px, 1.5vw, 11px);
@@ -375,7 +381,7 @@ body::-webkit-scrollbar {
     margin-top: 10px;
 }
 
-.sectionTwoAuthor span {
+.sectionTwoIMG span {
     font-family: "Inter", sans-serif;
     color: #E34646;
     font-size: clamp(9px, 1.5vw, 11px);
@@ -408,7 +414,7 @@ body::-webkit-scrollbar {
     display: flex;
 }
 
-.sectionThreeTeam img {
+.sectionThreeIMG img {
     width: 100%;
     min-width: 320px;
     height: auto;
@@ -416,7 +422,7 @@ body::-webkit-scrollbar {
     transition: ease-in-out 0.3s all;
 }
 
-.sectionThreeTeam p {
+.sectionThreeIMG p {
     font-family: "Inter", sans-serif;
     color: white;
     font-size: clamp(9px, 1.5vw, 11px);
@@ -432,7 +438,7 @@ body::-webkit-scrollbar {
     padding-left: 10%;
 }
 
-.sectionThreeTeam span {
+.sectionThreeIMG span {
     font-family: "Inter", sans-serif;
     color: #E34646;
     font-size: clamp(9px, 1.5vw, 11px);
@@ -490,7 +496,7 @@ body::-webkit-scrollbar {
 }
 
 .sectionFourSlides input[type="radio"] {
-    display: none; /* Seleção direta para inputs de tipo radio */
+    display: none;
 }
 
 .slide {
@@ -726,9 +732,65 @@ body::-webkit-scrollbar {
     font-weight: 200;
 }
 
-.sectionThreeContainerClubes {
-    height: 50vh;
+.sectionThreeLine {
+    width: 60%;
+    margin: 0 auto;
 }
+
+.sectionThreeClubes {
+    width: 100%;
+    height: auto;
+    padding: 8% 0;
+    background-color: #262626ab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionThreeContainerClubes {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  label {
+    margin-bottom: 20px;
+    color: white;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+    font-weight: lighter;
+  }
+
+  label span {
+    color: #E34646;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+  }
+
+  .sectionThreeBoxClubes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sectionThreeBoxClubes img {
+    width: 100%;
+    min-width: 180px;
+    height: auto;
+  }
+
+  .sectionThreeBoxClubes p {
+    color: white;
+    text-align: justify;
+    margin-left: 7%;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    color: rgb(192, 192, 192);
+    font-weight: 200;
+  }
 
 .sectionFourTitleClubes {
     margin-bottom: 20px;
@@ -769,6 +831,30 @@ body::-webkit-scrollbar {
     padding-left: 10%;
 }
 
+.sectionQuizContainer {
+    width: 60%;
+    margin: 0 auto;
+    height: 500px;
+}
+
+.sectionQuizTitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sectionQuizContainer p, .sectionQuizContainer span {
+    color: white;
+    font-family: "IM Fell DW Pica SC", serif;
+    font-size: clamp(23px, 1.5vw, 26px);
+    font-weight: lighter;
+}
+
+.sectionQuizContainer span {
+    color: #E34646;
+    font-size: clamp(23px, 1.5vw, 26px);
+}
+
+
 .sectionFinalBoxClubes {
     margin: 30% 0;
 }
@@ -806,11 +892,11 @@ body::-webkit-scrollbar {
         scale: 1.1;
     }
 
-    .sectionTwoAuthor img:hover {
+    .sectionTwoIMG img:hover {
         scale: 1.02;
     }
 
-    .sectionThreeTeam img:hover {
+    .sectionThreeIMG img:hover {
         scale: 1.02;
     }
 
@@ -832,7 +918,11 @@ body::-webkit-scrollbar {
         scale: 1.02;
     }
 
-    .sectionFourBoxClubes img:hover{
+    .sectionThreeBoxClubes img:hover {
+        scale: 1.02;
+    }
+
+    .sectionFourBoxClubes img:hover {
         scale: 1.02;
     }
 }
@@ -870,6 +960,10 @@ body::-webkit-scrollbar {
         min-width: 10px;
         max-width: 390px;
     }  
+
+    .sectionThreeContainerClubes {
+        width: 60%;
+      }
 
     .sectionFourBoxClubes .sectionFourBoxText {
         padding-left: 0%;
@@ -918,7 +1012,7 @@ body::-webkit-scrollbar {
     .sectionFourBoxClubes img {
         min-width: 10px;
         max-width: 310px;
-    }  
+    } 
 }
 
 @media only screen and (max-width: 768px) {
@@ -949,7 +1043,7 @@ body::-webkit-scrollbar {
     }
 
     .sectionTwo {
-        max-width: 80%;
+        width: 80%;
     }
 
     .sectionTwoTitle {
@@ -964,18 +1058,18 @@ body::-webkit-scrollbar {
         padding-right: 0;
     }
 
-    .sectionTwoAuthor {
+    .sectionTwoIMG {
         align-items: center;
         margin-bottom: 5%;
     }
 
-    .sectionTwoAuthor img {
+    .sectionTwoIMG img {
         min-width: 10px;
         max-width: 100px;
     }
 
     .sectionThree {
-        max-width: 80%;
+        width: 80%;
     }
 
     .sectionThreeTitle {
@@ -987,7 +1081,7 @@ body::-webkit-scrollbar {
         align-items: center;
     }
 
-    .sectionThreeTeam {
+    .sectionThreeIMG {
         margin: 5% 0;
     }
 
@@ -1001,7 +1095,7 @@ body::-webkit-scrollbar {
     }
 
     .sectionFour {
-        max-width: 80%;
+        width: 80%;
     }
 
     .sectionFourSlider {
@@ -1014,7 +1108,7 @@ body::-webkit-scrollbar {
     }
 
     .sectionFinalContainer {
-        max-width: 80%;
+        width: 80%;
     }
 
     .sectionFinalIcons {
@@ -1036,10 +1130,28 @@ body::-webkit-scrollbar {
         align-items: center;
     }
 
+    .sectionThreeContainerClubes {
+        width: 80%;
+      }
+
     .sectionTwoIMGClubes img {
         min-width: 10px;
         max-width: 250px;
     }
+
+    .sectionThreeBoxClubes {
+        flex-direction: column;
+    }
+
+    .sectionThreeBoxClubes img {
+        min-width: 10px;
+        max-width: 120px;
+    }
+
+    .sectionThreeBoxClubes p {
+        margin-left: 0%;
+        margin-top: 5%;
+      }
     
     .sectionFourBoxClubes img {
         min-width: 10px;
@@ -1060,22 +1172,23 @@ body::-webkit-scrollbar {
 
 @media screen and (max-width: 240px) {
     .headerNav {
-        width: 70vw;
-        right: -70vw;
+        width: 60vw;
+        right: -60vw;
     }
 
-    .headerMenu a, .headerMenu span {
-        font-size: 18px;
+    .headerMax {
+        display: none;
+    }
+    
+    .headerMin {
+        display: block;
     }
 
-    .headerMenu img {
-        width: 18px; /* Reduzindo o tamanho do ícone do menu */
-        height: auto;
-    }
-}
-
-@media screen and (max-width: 160px) {
     .headerNavMenu ul li i {
         display: none;
+    }
+
+    .headerNavMenu ul li a {
+        font-size: clamp(10px, 1.5vw, 13px);
     }
 }
