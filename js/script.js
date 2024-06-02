@@ -157,3 +157,30 @@ sectionFourSlides.addEventListener('touchmove', (e) => {
 sectionFourSlides.addEventListener('touchend', () => {
     isDragging = false;
 });
+
+//Section Quiz
+function mostrarResultado(question, currentQuestionId, nextQuestionId) {
+    const resultadoLabel = document.getElementById(`resultado${currentQuestionId.replace('question', '')}`);
+    resultadoLabel.style.display = 'block';
+    const isCorrect = question.value === 'true';
+
+    resultadoLabel.textContent = isCorrect ? 'CORRETO!' : 'INCORRETO!';
+    resultadoLabel.className = `sectionQuizResultado ${isCorrect ? 'correct' : 'incorrect'}`;
+
+    if (!isCorrect) {
+        // Se a resposta estiver incorreta, não avance para a próxima pergunta
+        return;
+    }
+
+    setTimeout(() => {
+        resultadoLabel.style.display = 'none';
+        document.getElementById(currentQuestionId).style.display = 'none';
+        if (nextQuestionId) {
+            document.getElementById(nextQuestionId).style.display = 'flex';
+        } else {
+            document.getElementById('endMessage').style.display = 'flex'; // Mostra a mensagem de fim
+        }
+    }, 2000);
+}
+
+

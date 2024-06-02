@@ -118,8 +118,69 @@
         <section class="sectionQuiz">
             <div class="sectionQuizContainer">
                 <p class="sectionQuizTitle">Teste o seu <span>conhecimento</span></p>
+                <div class="sectionQuizBox">
+                    <div class="sectionQuizQuestions" id="question1">
+                        <label class="questionLabel">Pergunta 1: Qual é a capital da França?</label>
+                        <div class="sectionQuizOptions">
+                            <div>
+                                <input type="radio" name="question1" value="true" onclick="mostrarResultado(this, 'question1', 'question2')">
+                                <label class="optionsLabel">Paris</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question1" value="false" onclick="mostrarResultado(this, 'question1', 'question2')">
+                                <label class="optionsLabel">Londres</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question1" value="false" onclick="mostrarResultado(this, 'question1', 'question2')">
+                                <label class="optionsLabel">Berlim</label>
+                            </div>
+                        </div>
+                        <label class="sectionQuizResultado" id="resultado1"></label>
+                    </div>
+        
+                    <div class="sectionQuizQuestions" id="question2" style="display: none;">
+                        <label class="questionLabel">Pergunta 2: Qual é a maior montanha do mundo?</label>
+                        <div class="sectionQuizOptions">
+                            <div>
+                                <input type="radio" name="question2" value="false" onclick="mostrarResultado(this, 'question2', 'question3')">
+                                <label class="optionsLabel">K2</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question2" value="true" onclick="mostrarResultado(this, 'question2', 'question3')">
+                                <label class="optionsLabel">Everest</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question2" value="false" onclick="mostrarResultado(this, 'question2', 'question3')">
+                                <label class="optionsLabel">Kangchenjunga</label>
+                            </div>
+                        </div>
+                        <label class="sectionQuizResultado" id="resultado2"></label>
+                    </div>
+        
+                    <div class="sectionQuizQuestions" id="question3" style="display: none;">
+                        <label class="questionLabel">Pergunta 3: Qual é o maior oceano do mundo?</label>
+                        <div class="sectionQuizOptions">
+                            <div>
+                                <input type="radio" name="question3" value="true" onclick="mostrarResultado(this, 'question3', '')">
+                                <label class="optionsLabel">Oceano Pacífico</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question3" value="false" onclick="mostrarResultado(this, 'question3', '')">
+                                <label class="optionsLabel">Oceano Atlântico</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="question3" value="false" onclick="mostrarResultado(this, 'question3', '')">
+                                <label class="optionsLabel">Oceano Índico</label>
+                            </div>
+                        </div>
+                        <label class="sectionQuizResultado" id="resultado3"></label>
+                    </div>
+
+                    <div class="sectionQuizEndMessage" id="endMessage" style="display: none;">
+                        <p>Parabéns! Você concluiu o teste.</p>
+                    </div>
+                </div>
             </div>
-            
         </section>
         <section class="sectionFinal">
             <div class="sectionFinalContainer">

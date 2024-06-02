@@ -14,7 +14,7 @@ body {
     margin: 0 auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    min-width: 120px;
+    min-width: 185px;
 }
 
 body::-webkit-scrollbar {
@@ -832,9 +832,9 @@ body::-webkit-scrollbar {
 }
 
 .sectionQuizContainer {
-    width: 60%;
+    width: 35%;
     margin: 0 auto;
-    height: 500px;
+    height: 40vh;
 }
 
 .sectionQuizTitle {
@@ -854,6 +854,63 @@ body::-webkit-scrollbar {
     font-size: clamp(23px, 1.5vw, 26px);
 }
 
+.sectionQuizBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionQuizQuestions {
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionQuizQuestions div:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.questionLabel {
+    text-align: center;
+    margin: 10% 0;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 19px);
+}
+
+.optionsLabel {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+.sectionQuizEndMessage {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-top: 20%;
+    text-align: center;
+}
+
+.sectionQuizEndMessage p {
+    font-family: "Inter", sans-serif;
+    font-size: clamp(14px, 1.5vw, 19px);
+}
+
+.sectionQuizResultado {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.sectionQuizResultado.correct {
+    color: green;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(13px, 1.5vw, 17px);
+    font-weight: 400;
+}
+
+.sectionQuizResultado.incorrect {
+    color: red;
+    font-family: "Inter", sans-serif;
+    font-size: clamp(13px, 1.5vw, 17px);
+    font-weight: 300;
+}
 
 .sectionFinalBoxClubes {
     margin: 30% 0;
@@ -1013,6 +1070,10 @@ body::-webkit-scrollbar {
         min-width: 10px;
         max-width: 310px;
     } 
+
+    .sectionQuizContainer {
+        width: 50%;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1156,6 +1217,10 @@ body::-webkit-scrollbar {
     .sectionFourBoxClubes img {
         min-width: 10px;
         max-width: 250px;
+    }
+
+    .sectionQuizContainer {
+        width: 70%;
     }
 }
 
