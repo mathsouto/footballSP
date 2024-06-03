@@ -226,6 +226,8 @@ body::-webkit-scrollbar {
 }
 
 .headerNavMenuEscudos img {
+    /* width: 30px; */
+    /* height: auto; */
     filter: saturate(10%);
 }
 
@@ -621,7 +623,7 @@ body::-webkit-scrollbar {
 }
 
 .sectionFinalIcons a img {
-    width: 62px;
+    width: 80px;
     height: auto;
     filter: saturate(10%);
     -webkit-tap-highlight-color: transparent;
@@ -739,6 +741,7 @@ body::-webkit-scrollbar {
 .sectionTwoIMGClubes {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 
@@ -746,6 +749,7 @@ body::-webkit-scrollbar {
     border-radius: 10px;
     width: 100%;
     min-width: 390px;
+    max-width: 390px;
     height: auto;
     cursor: pointer;
     transition: ease-in-out 0.3s all;
@@ -816,12 +820,12 @@ body::-webkit-scrollbar {
     width: 100%;
     min-width: 180px;
     height: auto;
+    margin-right: 5%;
   }
 
   .sectionThreeBoxClubes p {
     color: white;
     text-align: justify;
-    margin-left: 7%;
     font-family: "Inter", sans-serif;
     font-size: clamp(14px, 1.5vw, 18px);
     color: rgb(192, 192, 192);
@@ -839,6 +843,7 @@ body::-webkit-scrollbar {
 .sectionFourBoxClubes img {
     width: 100%;
     min-width: 420px;
+    max-width: 420px;
     height: auto;
     cursor: pointer;
     transition: ease-in-out 0.3s all;
@@ -1220,7 +1225,7 @@ body::-webkit-scrollbar {
     }
 
     .sectionFinalIcons a img {
-        width: 44px;
+        width: 60px;
     }    
 
     /* Clubes */
@@ -1249,8 +1254,13 @@ body::-webkit-scrollbar {
         max-width: 120px;
     }
 
+    .sectionThreeBoxClubes img {
+        margin-right: 0%;
+      }
+    
+
     .sectionThreeBoxClubes p {
-        margin-left: 0%;
+        /* margin-left: 0%; */
         margin-top: 5%;
       }
     
