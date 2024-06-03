@@ -893,6 +893,7 @@ body::-webkit-scrollbar {
 .sectionQuizBox {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 .sectionQuizQuestions {
@@ -1239,7 +1240,9 @@ body::-webkit-scrollbar {
 
     .sectionThreeBoxClubes {
         flex-direction: column;
+        margin: 20% 0;
     }
+    
 
     .sectionThreeBoxClubes img {
         min-width: 10px;
@@ -1259,6 +1262,14 @@ body::-webkit-scrollbar {
     .sectionQuizContainer {
         width: 70%;
         height: 35vh;
+    }
+
+    .sectionQuizBox {
+        margin-top: 40px;
+    }
+
+    .sectionFinalBoxClubes {
+        margin: 45% 0;
     }
 }
 
