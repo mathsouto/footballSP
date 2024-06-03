@@ -904,6 +904,8 @@ body::-webkit-scrollbar {
 .sectionQuizQuestions {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .sectionQuizQuestions div:not(:last-child) {
